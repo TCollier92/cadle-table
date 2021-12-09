@@ -63,6 +63,8 @@ Future<Response> _getTable(int division) async {
   final updatedLeagueTable =
       _getFullLeagueTable(matchupObjects.toList(), leagueRowObjects.toList());
 
+  updatedLeagueTable.sort();
+
   if (division == 1) {
     d1Cache = updatedLeagueTable;
     d1CacheTime = DateTime.now();
